@@ -72,11 +72,11 @@ bool insertEle(int a[],int y,int yi)
 bool deleteEle(int a[],int z)
 {
     // add code here.
-    int temp=0;
-    for(int i=0; i<10000; i++){
-        if(a[i]==z){
-            temp=1;
-        }
-    }
+    // int temp=0;
+    // for(int i=0; i<10000; i++){
+    //     if(a[i]==z){
+    //         temp=1;
+    //     }
+    // }
     return true;
 }
