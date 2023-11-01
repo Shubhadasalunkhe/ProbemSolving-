@@ -11,21 +11,26 @@ class Solution{
 public:
     int findMaxAverage(int arr[], int n, int k) {
         // code here
-         int sum = 0, max_sum = 0, start = 0, result = 0;
-        for(int i = 0; i<n; i++){
-            if(i>=k){
-                sum+=arr[i];
-                sum-=arr[start++];
-                if(sum>max_sum){
-                    max_sum = sum;
-                    result = start;
-                }
-            }else{
-                sum+=arr[i];
-                if(i==k-1) max_sum = sum;
-            }
-        }
-        return result;
+  double sum = 0;
+       for(int i = 0; i < k ; i++){
+           sum += arr[i];
+       }
+       double maxi = sum / k;
+       int maxiIndex = 0;
+       int i = 0,j=k-1;
+       while(j < n){
+           if(j - i+ 1 == k){
+               if(sum / k > maxi){
+                   maxiIndex = i;
+                   maxi = sum / k;
+               }
+           }
+           sum -= arr[i];
+           i++;
+           j++;
+           sum += arr[j];
+       }
+       return maxiIndex;
     }
 };
 
